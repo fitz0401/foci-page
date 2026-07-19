@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FOCI POLICY: Focus on Object-Centric Interactions for Relational Manipulation Policies">
+  <meta name="keywords" content="Shared Control, Teleoperation, Task-Level Intent Inference, Multi-Step Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foci Policy</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span style="font-variant: small-caps;">Foci Policy</span>: Focus on Object-Centric Interactions for Relational Manipulation Policies</h1>
+          <p class="subtitle is-4 has-text-grey">
+            <a href="https://icra-beyond-teleop.github.io/" target="_blank" rel="noopener noreferrer">
+              ICRA 2026 Beyond Teleoperation Workshop
+            </a>
+          </p>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://fitz0401.github.io">Ze Fu</a>,</span>
+            <span class="author-block">
+              <a href="https://mousecpn.github.io">Pinhao Song</a>,</span>
+            <span class="author-block">
+              <a href="https://youtoo.hu">Yutong Hu</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://renaud-detry.net">Renaud Detry</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">KU Leuven</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link.
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2509.10416"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/fitz0401/foci_policy"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Real-world Link. -->
+              <span class="link-block">
+                <a href="https://github.com/fitz0401/foci_ros2_ws"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-gamepad"></i>
+                  </span>
+                  <span>Real World</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Highlights</h2>
+        <div class="publication-video">
+          <video controls muted autoplay loop preload="metadata" width="100%">
+            <source src="./static/videos/foci-highlight.mp4" type="video/mp4">
+            Please update your browser to view this video content.
+          </video>
+          <p>
+            <strong>Main Takeaway:</strong> Object-centric interaction modeling enables one-shot relational manipulation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Key Insight. -->
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered">
+        <h2 class="title is-3">Key Insight</h2>
+        <p style="max-width: 80%; margin: 0 auto 1rem; text-align: left;">
+          Relational manipulation can be simplified through two complementary abstractions:
+        </p>
+        <div class="content" style="max-width: 80%; margin: 0 auto; text-align: left;">
+          <p>1. <strong>Spatial abstraction</strong> reduces trajectory variability.</p>
+          <img src="./static/images/spatial_abstraction.png" 
+               alt="Spatial abstraction of relational manipulation"
+               style="width: 60%; max-width: 60%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto 1rem;"/>
+          <p>2. <strong>Temporal abstraction</strong> isolates the only part that matters.</p>
+          <img src="./static/images/temporal_abstraction.png" 
+               alt="Temporal abstraction of relational manipulation"
+               style="width: 60%; max-width: 60%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto;"/>
+        </div>
+      </div>
+    </div>
+    <!--/ Key Insight. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method Overview. -->
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered">
+        <h2 class="title is-3 has-text-centered">Method Overview</h2>
+          <img src="./static/images/method_overview.png" 
+                alt="FOCI POLICY method overview"
+                style="width: 60%; max-width: 60%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto;"/>
+          <p>
+            <span style="font-variant: small-caps;">Foci Policy</span> predicts relative SE(3) trajectories between task-relevant entities instead of end-effector trajectories.
+          </p>
+          <img src="./static/images/data_pipeline.png" 
+                alt="FOCI POLICY method overview"
+                style="width: 60%; max-width: 60%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: block; margin: 0 auto;"/>
+          <p>
+            Interaction intervals are automatically detected from demonstrations using change-point detection over kinematic and geometric signals.
+          </p>
+      </div>
+    </div>
+    <!--/ Method Overview. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered"><span style="font-variant: small-caps;">Foci Policy</span> in RLBench</h2>
+        <div class="content has-text-centered">
+          <p style="margin-bottom: 20px; font-size: 0.9em; color: #666;">
+            Only 1 demonstration is provided for each task.
+          </p>
+        </div>
+        <div class="columns is-centered" style="margin-bottom: 10px;">
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/meat_on_grill_var0_ep5_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Meat on Grill</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/phone_on_base_var0_ep6_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Phone on Base</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/put_books_on_bookshelf_var0_ep12_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Books on Shelf</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/put_plate_in_colored_dish_rack_var0_ep19_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Plate in Rack</strong></p>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-bottom: 10px;">
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/put_toilet_roll_on_stand_var0_ep5_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Toilet Roll on Stand</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/put_umbrella_in_umbrella_stand_var0_ep5_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Umbrella in Stand</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/reach_and_drag_var0_ep10_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Reach and Drag</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/screw_nail_var0_ep5_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Screw Nail</strong></p>
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/slide_block_to_color_target_var0_ep10_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Slide Block</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/stack_blocks_var0_ep6_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Stack Blocks</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/stack_wine_var0_ep5_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Stack Wine</strong></p>
+          </div>
+          <div class="column is-3">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_simu/turn_tap_var0_ep2_success.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Turn Tap</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered"><span style="font-variant: small-caps;">Foci Policy</span> in Real-World</h2>
+
+        <!-- One-Shot Learning -->
+        <h3 class="title is-4 has-text-centered" style="margin-top: 30px;">One-Shot Learning</h3>
+        <div class="content has-text-centered">
+          <p style="margin-bottom: 20px; font-size: 0.9em; color: #666;">
+            <span style="font-variant: small-caps;">Foci Policy</span> learns each manipulation task from a single demonstration and generalizes across diverse object configurations.
+          </p>
+        </div>
+
+        <div class="columns is-centered" style="margin-bottom: 10px;">
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/insert_tube_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/insert_tube_2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Insert Tube</strong></p>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/insert_tube_3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-bottom: 10px;">
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/open_drawer_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/open_drawer_2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Open Drawer</strong></p>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/open_drawer_3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-bottom: 10px;">
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/pour_cup_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/pour_cup_2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Pour Cup</strong></p>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/pour_cup_3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-bottom: 10px;">
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/scale_grape_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/scale_grape_2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Scale Grape</strong></p>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/scale_grape_3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/sweep_dust_1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/sweep_dust_2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Sweep Dust</strong></p>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/foci_real/sweep_dust_3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <!--/ One-Shot Learning -->
+
+        <!-- Special Cases -->
+        <h3 class="title is-4 has-text-centered" style="margin-top: 40px;">Cross-Gripper and Scene Transfer</h3>
+        <div class="content has-text-centered">
+          <p style="margin-bottom: 20px; font-size: 0.9em; color: #666;">
+            The same policy transfers from the original gripper to a Robotiq gripper and adapts to new backgrounds easily, without retraining the model.
+          </p>
+        </div>
+        <div class="columns is-centered" style="margin-bottom: 20px;">
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/special_cases/scale_grape.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Scale Grape</strong></p>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/special_cases/insert_tube.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Insert Tube</strong></p>
+          </div>
+          <div class="column is-4">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/special_cases/open_drawer.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 0.85em;"><strong>Open Drawer</strong></p>
+          </div>
+        </div>
+
+        <h3 class="title is-4 has-text-centered" style="margin-top: 40px;">Robust Execution in Complex Scenes</h3>
+        <div class="content has-text-centered">
+          <p style="margin-bottom: 20px; font-size: 0.9em; color: #666;">
+            By separating task-critical interactions from unconstrained transport motion, <span style="font-variant: small-caps;">Foci Policy</span> can combine learned interaction trajectories with motion planning for obstacle avoidance and reliable execution in cluttered scenes.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-6">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/special_cases/obstacle_avoidance.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 10px;"><strong>Obstacle Avoidance</strong></p>
+          </div>
+          <div class="column is-6">
+            <video controls muted autoplay loop preload="metadata" width="100%">
+              <source src="./static/videos/special_cases/cluttered_scene.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-centered" style="margin-top: 10px;"><strong>Cluttered Scene</strong></p>
+          </div>
+        </div>
+        <!--/ Special Cases -->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{fu2025tasc,
+      title={TASC: Task-Aware Shared Control for Teleoperated Manipulation}, 
+      author={Ze Fu and Pinhao Song and Yutong Hu and Renaud Detry},
+      year={2025},
+      eprint={2509.10416},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2509.10416}, 
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer" style="padding: 1.5rem 1.5rem 2rem;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content" style="margin-bottom: 0;">
+          <p style="margin-bottom: 0; font-size: 0.9rem;">
+            Page source code was adapted from <a rel="link" href="https://github.com/nerfies/nerfies.github.io">here</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    const videos = Array.from(document.querySelectorAll('video'));
+    videos.forEach((v, i) => {
+      const sources = Array.from(v.querySelectorAll('source')).map(s => ({ src: s.getAttribute('src'), type: s.getAttribute('type') }));
+      console.log('[VIDEO DEBUG]', i, {
+        currentSrc: v.currentSrc,
+        sources,
+        readyState: v.readyState,
+        networkState: v.networkState,
+        paused: v.paused,
+        videoWidth: v.videoWidth,
+        videoHeight: v.videoHeight,
+        error: v.error ? { code: v.error.code, message: v.error.message } : null
+      });
+    });
+  } catch (e) {
+    console.error('[VIDEO DEBUG] script error', e);
+  }
+});
+</script>
+
+</body>
+</html>
